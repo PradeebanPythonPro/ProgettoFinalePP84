@@ -33,3 +33,5 @@ async def on_message(message):
         await message.channel.send(file=discord.File(image_path))
 
 client.run(TOKEN)
+
+# Esempio
