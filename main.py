@@ -9,7 +9,7 @@ TOKEN = "TUO_TOKEN_DISCORD"
 CHANNEL_ID = 1234567890
 
 # Cartella contenente le immagini
-IMAGE_FOLDER = "immagini/"
+IMAGE_FOLDER = "images"
 
 # Configura il bot
 intents = discord.Intents.default()
