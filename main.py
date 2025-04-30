@@ -1,37 +1,24 @@
 import discord
+from discord.ext import commands
 import os
 import random
 
-# Inserisci il tuo token del bot qui
-TOKEN = "TUO_TOKEN_DISCORD"
-
-# ID del canale in cui vuoi inviare le immagini (opzionale)
-CHANNEL_ID = 1234567890
-
-# Cartella contenente le immagini
-IMAGE_FOLDER = "images"
-
-# Configura il bot
 intents = discord.Intents.default()
-client = discord.Client(intents=intents)
+intents.message_content = True
 
-@client.event
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
 async def on_ready():
-    print(f'Bot connesso come {client.user}')
+    print(f'Hai fatto l\'accesso come {bot.user}')
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return  # Evita che il bot risponda ai propri messaggi
+@bot.command()
+async def ciao(ctx):
+    await ctx.send(f'Ciao! Sono un bot {bot.user}!')
 
-    if message.content.strip().lower() == "$brainrotCC":
-        if not os.path.exists(IMAGE_FOLDER) or not os.listdir(IMAGE_FOLDER):
-            await message.channel.send("Nessuna immagine disponibile!")
-            return
+@bot.command()
+async def brainrot(ctx):
+    image_path = os.path.join("images", random.choice(os.listdir("images")))
+    await ctx.send(file=discord.File(image_path))
 
-        image_path = os.path.join(IMAGE_FOLDER, random.choice(os.listdir(IMAGE_FOLDER)))
-        await message.channel.send(file=discord.File(image_path))
-
-client.run(TOKEN)
-
-# Esempio
+bot.run("MTI5MjA0MTk4NTMzNDQ0ODE3MA.GoRkfR.v5m753y47IAX0gfMMAaLDjhgrzUf3oHTtra7TI")
