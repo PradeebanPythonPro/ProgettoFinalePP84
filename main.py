@@ -26,4 +26,4 @@ async def brainrot(ctx):
     image_path = os.path.join("images", random.choice(os.listdir("images")))
     await ctx.send(file=discord.File(image_path))
 
-bot.run("MTI5MjA0MTk4NTMzNDQ0ODE3MA.GtZcqP.NZ5ttjI22W4j66Go3hCdU-y3P-57lJ2XEndpcg")
+bot.run("INSREISCI TOKEN")
