@@ -32,4 +32,4 @@ async def brainrot(ctx):
 async def sito(ctx):
     await ctx.send(str(get_random_link()))
 
-bot.run("MTI5MjA0MTk4NTMzNDQ0ODE3MA.GrolcI.Hkxe9CMxThB3G5uhnjk58Lz5pOPYHpa6-dgolI")
+bot.run("INSERISCI TOKEN")
