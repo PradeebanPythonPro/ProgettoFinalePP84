@@ -13,12 +13,17 @@ async def on_ready():
     print(f'Hai fatto l\'accesso come {bot.user}')
 
 @bot.command()
+async def auti(ctx):
+    await ctx.send(f"""Ciao, {bot.user}! Le istruzioni per attivare i comandi di questo bot sono i seguenti:\n
+                   $brainrot per ricevere un meme casuale a tema riscaldamento globale""")
+
+@bot.command()
 async def ciao(ctx):
-    await ctx.send(f'Ciao! Sono un bot {bot.user}!')
+    await ctx.send(f"Ciao! Sono un bot {bot.user}!")
 
 @bot.command()
 async def brainrot(ctx):
     image_path = os.path.join("images", random.choice(os.listdir("images")))
     await ctx.send(file=discord.File(image_path))
 
-bot.run("INSERISCI TOKEN")
+bot.run("MTI5MjA0MTk4NTMzNDQ0ODE3MA.GtZcqP.NZ5ttjI22W4j66Go3hCdU-y3P-57lJ2XEndpcg")
